@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FAMOX Industrial-Modern Agricultural Design System */
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Deep Forest Green + Warm Gold */
+    --background: 45 25% 97%;
+    --foreground: 160 15% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 15% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 15% 12%;
+
+    /* Primary: Deep Forest Green */
+    --primary: 152 45% 22%;
+    --primary-foreground: 45 25% 97%;
+
+    /* Secondary: Warm Gold/Amber */
+    --secondary: 38 85% 55%;
+    --secondary-foreground: 160 15% 12%;
+
+    /* Muted: Soft sage */
+    --muted: 150 15% 92%;
+    --muted-foreground: 160 10% 45%;
+
+    /* Accent: Earthy terracotta */
+    --accent: 25 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 85%;
+    --input: 150 15% 88%;
+    --ring: 152 45% 22%;
+
+    --radius: 0.625rem;
+
+    /* Extended Palette */
+    --forest: 152 45% 22%;
+    --forest-light: 152 35% 35%;
+    --forest-dark: 152 50% 15%;
+    --gold: 38 85% 55%;
+    --gold-light: 42 80% 70%;
+    --gold-dark: 35 90% 42%;
+    --earth: 25 40% 35%;
+    --cream: 45 25% 97%;
+    --charcoal: 160 15% 12%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(152 45% 22%) 0%, hsl(152 50% 15%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 85% 55%) 0%, hsl(42 80% 70%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(160, 15%, 12%, 0.9) 0%, hsla(160, 15%, 12%, 0.6) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(45 25% 97%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(38 85% 55%) 0%, hsl(25 65% 50%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px hsla(160, 15%, 12%, 0.05);
+    --shadow-md: 0 4px 12px hsla(160, 15%, 12%, 0.08);
+    --shadow-lg: 0 12px 32px hsla(160, 15%, 12%, 0.12);
+    --shadow-xl: 0 24px 48px hsla(160, 15%, 12%, 0.16);
+    --shadow-glow: 0 0 40px hsla(38, 85%, 55%, 0.25);
+    --shadow-card: 0 4px 20px hsla(160, 15%, 12%, 0.06);
+
+    /* Sidebar */
+    --sidebar-background: 152 45% 22%;
+    --sidebar-foreground: 45 25% 97%;
+    --sidebar-primary: 38 85% 55%;
+    --sidebar-primary-foreground: 160 15% 12%;
+    --sidebar-accent: 152 35% 28%;
+    --sidebar-accent-foreground: 45 25% 97%;
+    --sidebar-border: 152 30% 30%;
+    --sidebar-ring: 38 85% 55%;
+  }
+
+  .dark {
+    --background: 160 20% 8%;
+    --foreground: 45 25% 95%;
+
+    --card: 160 18% 12%;
+    --card-foreground: 45 25% 95%;
+
+    --popover: 160 18% 12%;
+    --popover-foreground: 45 25% 95%;
+
+    --primary: 152 40% 45%;
+    --primary-foreground: 160 20% 8%;
+
+    --secondary: 38 80% 50%;
+    --secondary-foreground: 160 20% 8%;
+
+    --muted: 160 15% 18%;
+    --muted-foreground: 150 10% 60%;
+
+    --accent: 25 60% 55%;
+    --accent-foreground: 160 20% 8%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 15% 20%;
+    --input: 160 15% 22%;
+    --ring: 152 40% 45%;
+
+    --sidebar-background: 160 20% 10%;
+    --sidebar-foreground: 45 25% 95%;
+    --sidebar-primary: 38 80% 50%;
+    --sidebar-primary-foreground: 160 20% 8%;
+    --sidebar-accent: 160 18% 16%;
+    --sidebar-accent-foreground: 45 25% 95%;
+    --sidebar-border: 160 15% 18%;
+    --sidebar-ring: 38 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-secondary text-secondary-foreground hover:brightness-110 shadow-lg hover:shadow-xl transition-all duration-300 font-semibold;
+  }
+
+  .btn-hero-outline {
+    @apply bg-transparent border-2 border-cream/30 text-cream hover:bg-cream/10 transition-all duration-300 font-semibold backdrop-blur-sm;
+  }
+
+  /* Card Styles */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .card-feature {
+    @apply bg-card rounded-xl p-6 shadow-card border border-border/50 card-hover;
+  }
+
+  /* Section Utilities */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Hero Overlay */
+  .hero-overlay {
+    background: var(--gradient-overlay);
+  }
+
+  /* Trust Badge */
+  .trust-badge {
+    @apply inline-flex items-center gap-2 bg-card/90 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium shadow-md border border-border/50;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  /* Machinery Card */
+  .machinery-card {
+    @apply bg-card rounded-xl overflow-hidden shadow-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Status Badges */
+  .status-new {
+    @apply bg-primary/10 text-primary border-primary/20;
+  }
+
+  .status-contacted {
+    @apply bg-blue-500/10 text-blue-600 border-blue-500/20;
+  }
+
+  .status-quoted {
+    @apply bg-secondary/10 text-secondary-foreground border-secondary/20;
+  }
+
+  .status-won {
+    @apply bg-green-500/10 text-green-600 border-green-500/20;
+  }
+
+  .status-lost {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+
+  /* Admin Dashboard */
+  .stat-card {
+    @apply bg-card rounded-xl p-6 shadow-card border border-border/50;
+  }
+
+  .admin-table {
+    @apply w-full text-sm;
+  }
+
+  .admin-table th {
+    @apply text-left font-semibold text-muted-foreground py-3 px-4 border-b border-border;
+  }
+
+  .admin-table td {
+    @apply py-4 px-4 border-b border-border/50;
+  }
+}
+
+@layer utilities {
+  /* Animation Utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Backdrop */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+
+  .glass-dark {
+    @apply bg-charcoal/80 backdrop-blur-md;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
